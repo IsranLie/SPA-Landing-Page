@@ -12,12 +12,22 @@ export default function Provide() {
       <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
         {/* Text */}
         <div className="md:w-1/2">
-          <h3 className="font-semibold mb-2 text-amber-600 tracking-wide">
+          <h3 className="font-semibold mb-2 text-custom-brown tracking-wide">
             Provide
           </h3>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 leading-snug">
             We Provide Many Features and Property Benefits
           </h2>
+
+          {/* Gambar khusus mobile */}
+          <div className="mb-6 md:hidden">
+            <img
+              src="/img/square-2.jpg"
+              alt="Provide Mobile"
+              className="w-full rounded-md shadow"
+            />
+          </div>
+
           <p className="text-gray-600 mb-6">
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
             commodo ligula eget dolor. Aenean massa. Cum sociis natoque
@@ -34,12 +44,12 @@ export default function Provide() {
           </div>
         </div>
 
-        {/* Image */}
-        <div className="md:w-1/2 flex justify-center">
+        {/* Gambar khusus desktop */}
+        <div className="md:w-1/2 hidden md:flex justify-center">
           <img
-            src="/img/square-1.jpg"
-            alt="About"
-            className="w-[450px] h-auto rounded-md shadow"
+            src="/img/square-2.jpg"
+            alt="Provide Desktop"
+            className="w-[500px] h-[300px] rounded-md shadow"
           />
         </div>
       </div>

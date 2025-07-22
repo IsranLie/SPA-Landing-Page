@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* === Styling Pagination Swiper === */
+
+/* Warna untuk pagination dots tidak aktif (deklarasi pertama) */
+.swiper-pagination-bullet {
+  background-color: #d1d5db !important; /* Contoh warna abu-abu terang */
+  opacity: 0.7 !important;
+  width: 10px; /* Lebar dot */
+  height: 10px; /* Tinggi dot */
+  margin: 0 4px !important; /* Jarak antar dot */
+}
+
+/* Warna untuk pagination dots aktif (deklarasi kedua, agar menimpa yang tidak aktif) */
+.swiper-pagination-bullet-active {
+  background-color: #a85c01 !important; /* Warna cokelat untuk yang aktif */
+  opacity: 1 !important;
+}
+
+/* Posisi pagination - Sesuaikan jika pagination Anda tidak di tengah atau terlalu dekat/jauh */
+.swiper-pagination {
+  bottom: 10px !important; /* Sesuaikan posisi vertikal dari bawah */
+}
+
+/* Styling untuk tombol navigasi ketika disabled */
+.swiper-button-disabled {
+  opacity: 0.5; /* Kurangi opasitas agar terlihat nonaktif */
+  cursor: not-allowed; /* Ubah kursor menjadi 'not-allowed' */
+}
