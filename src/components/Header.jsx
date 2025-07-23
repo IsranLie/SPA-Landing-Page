@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   RiPhoneFill,
   RiMailFill,
@@ -16,6 +16,9 @@ import { HiOutlineMenuAlt3 } from "react-icons/hi";
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOverlayOpen, setIsSearchOverlayOpen] = useState(false);
+  const [savedScrollPosition, setSavedScrollPosition] = useState(0);
+
+  const totalHeaderHeightMobile = "114px";
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -27,17 +30,49 @@ export default function Header() {
 
   const toggleSearchOverlay = () => {
     setIsSearchOverlayOpen(!isSearchOverlayOpen);
-    // Tutup menu mobile jika search overlay dibuka
     if (isMobileMenuOpen) {
       setIsMobileMenuOpen(false);
     }
   };
 
-  const totalHeaderHeightMobile = "114px";
+  // Effect untuk mengatur body overflow tanpa mengganggu sticky positioning
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      // Simpan posisi scroll saat ini
+      const scrollY = window.scrollY;
+      setSavedScrollPosition(scrollY);
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+    } else if (savedScrollPosition !== null) {
+      // Restore posisi scroll hanya jika menu sebelumnya terbuka
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+
+      // Gunakan timeout kecil untuk memastikan DOM sudah terupdate
+      setTimeout(() => {
+        window.scrollTo(0, savedScrollPosition);
+      }, 0);
+    }
+
+    // Cleanup function
+    return () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <>
-      {/* BARIS KONTAK DI ATAS */}
+      {/* Contact Info (Mobile View) */}
       <div className="bg-custom-black text-white text-sm py-3 px-6 md:px-14 lg:px-28">
         <div className="flex flex-row flex-wrap justify-center items-center gap-x-2 gap-y-2 md:hidden">
           <div className="flex items-center space-x-1 text-xs">
@@ -54,9 +89,8 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Konten untuk Desktop (flex-row) */}
+        {/* Contact Info (Desktop View) */}
         <div className="hidden md:flex justify-between items-center">
-          {/* Bagian Kiri: Info Kontak Desktop */}
           <div className="flex items-center space-x-4">
             <a
               href="#"
@@ -78,7 +112,6 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Bagian Kanan: Ikon Media Sosial Desktop */}
           <div className="flex items-center space-x-2">
             <a href="#" className="hover:text-blue-500">
               <RiGoogleFill className="h-5 w-5" />
@@ -96,7 +129,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* BARIS NAVIGASI UTAMA (Sticky Header) */}
+      {/* Header Navigasi Utama - Tetap Sticky */}
       <div className="sticky top-0 z-50 px-6 sm:px-10 md:px-14 lg:px-28 flex justify-between items-center py-4 text-white bg-neutral-700">
         <a
           href="#home"
@@ -136,7 +169,7 @@ export default function Header() {
           </div>
         </nav>
 
-        {/* Tombol Search & Hamburger (Hanya Tampil di Mobile) */}
+        {/* Search & Hamburger Button (Mobile) */}
         <div className="md:hidden flex items-center space-x-2">
           <button
             className="text-white focus:outline-none bg-custom-brown rounded-sm p-2"
@@ -158,47 +191,77 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu (Hanya Navigasi Utama dan Search Bar Internal) */}
+      {/* Mobile Navigation Overlay */}
       {isMobileMenuOpen && (
         <div
-          className="
-            md:hidden
-            fixed left-0 right-0 z-40
-            bg-neutral-700 text-white
-            py-4 px-6
-            flex flex-col
-            space-y-6
-            transition-all duration-300 ease-in-out
-          "
-          style={{ top: totalHeaderHeightMobile }}
-        >
-          <nav className="flex flex-col space-y-4">
-            <a
-              href="#about"
-              className="text-md font-semibold hover:text-custom-brown"
-              onClick={toggleMobileMenu}
-            >
-              About
-            </a>
-            <a
-              href="#services"
-              className="text-md font-semibold hover:text-custom-brown"
-              onClick={toggleMobileMenu}
-            >
-              Services
-            </a>
-            <a
-              href="#contact"
-              className="text-md font-semibold hover:text-custom-brown"
-              onClick={toggleMobileMenu}
-            >
-              Contact
-            </a>
-          </nav>
-        </div>
+          className="fixed inset-0 z-30 bg-black bg-opacity-50 md:hidden"
+          onClick={toggleMobileMenu}
+        ></div>
       )}
 
-      {/* FLOATING SEARCH OVERLAY Mobile - Disesuaikan agar hanya setinggi input */}
+      {/* Mobile Navigation Sidebar */}
+      <div
+        className={`
+          md:hidden
+          fixed top-0 right-0 z-40
+          h-screen w-3/4 sm:w-1/2 md:w-1/3 max-w-sm
+          bg-neutral-700 text-white
+          py-6 px-6
+          flex flex-col
+          transition-transform duration-300 ease-in-out
+          ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"}
+        `}
+      >
+        <div className="flex justify-end mb-8">
+          <button
+            className="text-white p-2 rounded-full hover:bg-neutral-600"
+            onClick={toggleMobileMenu}
+          >
+            <RiCloseLine className="h-8 w-8" />
+          </button>
+        </div>
+        <nav className="flex flex-col space-y-6">
+          <a
+            href="#about"
+            className="text-lg font-semibold hover:text-custom-brown py-2 border-b border-neutral-600 last:border-b-0"
+            onClick={toggleMobileMenu}
+          >
+            About
+          </a>
+          <a
+            href="#services"
+            className="text-lg font-semibold hover:text-custom-brown py-2 border-b border-neutral-600 last:border-b-0"
+            onClick={toggleMobileMenu}
+          >
+            Services
+          </a>
+          <a
+            href="#contact"
+            className="text-lg font-semibold hover:text-custom-brown py-2 border-b border-neutral-600 last:border-b-0"
+            onClick={toggleMobileMenu}
+          >
+            Contact
+          </a>
+        </nav>
+
+        {/* Social Icons (sidebar) */}
+        <div className="flex items-center justify-center space-x-4 mt-auto py-4 border-t border-neutral-600">
+          <a href="#" className="hover:text-blue-500">
+            <RiGoogleFill className="h-6 w-6" />
+          </a>
+          <a href="#" className="hover:text-blue-500">
+            <RiFacebookCircleFill className="h-6 w-6" />
+          </a>
+          <a href="#" className="hover:text-blue-500">
+            <RiTwitterFill className="h-6 w-6" />
+          </a>
+          <a href="#" className="hover:text-blue-500">
+            <RiLinkedinBoxFill className="h-6 w-6" />
+          </a>
+        </div>
+      </div>
+
+      {/* Mobile Search Form */}
       {isSearchOverlayOpen && (
         <div
           className="
@@ -212,8 +275,6 @@ export default function Header() {
           style={{ top: totalHeaderHeightMobile }}
         >
           <div className="relative flex-grow">
-            {" "}
-            {/* flex-grow agar input mengambil sisa ruang */}
             <input
               type="text"
               placeholder="Search Here"
@@ -222,9 +283,8 @@ export default function Header() {
             />
             <RiSearchLine className="absolute inset-y-0 right-5 h-full w-6 text-gray-500 pointer-events-none" />
           </div>
-          {/* Tombol X (Close Search) - Sekarang di luar div input */}
           <button
-            className="text-white p-2 rounded-full ml-4" /* margin kiri untuk jarak dari input */
+            className="text-white p-2 rounded-full ml-4"
             onClick={toggleSearchOverlay}
           >
             <RiCloseLine className="h-8 w-8" />

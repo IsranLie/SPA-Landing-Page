@@ -12,12 +12,8 @@ export default function Footer() {
   return (
     <footer className="bg-custom-black text-white py-12">
       <div className="container mx-auto px-10 lg:px-20">
-        {/* Adjusted grid layout */}
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-8">
-          {/* Skatcher column - takes more space on larger screens */}
           <div className="col-span-2 lg:col-span-2">
-            {" "}
-            {/* This ensures it takes 1 column in lg, and adjust others accordingly */}
             <h3 className="flex items-center gap-2 text-xl font-bold mb-4 italic">
               <RiDragMoveLine className="h-6 w-6" />
               Skatcher
