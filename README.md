@@ -73,7 +73,7 @@ https://skatcher-profile.vercel.app/
 ### Screen Capture
 
 ##### Desktop View:
-<img width="1300" height="4150" alt="screencapture-skatcher-profile" src="https://github.com/user-attachments/assets/5acc457e-2f86-4477-93ab-8133e6ea6b29" />
+<img width="1000" height="4150" alt="screencapture-skatcher-profile" src="https://github.com/user-attachments/assets/5acc457e-2f86-4477-93ab-8133e6ea6b29" />
 
 ##### Mobile View:
 <img width="308" height="594" alt="image" src="https://github.com/user-attachments/assets/aa8f1755-77e4-4288-acd4-dda7d8e2f740" />
