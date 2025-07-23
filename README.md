@@ -2,6 +2,8 @@
 
 Simple responsive design property marketing website page
 
+> give a star if you like it, cheers
+
 ### Folder Structure
 
 ```
@@ -65,10 +67,13 @@ This project designed with the latest web browsers in mind. Recommended that you
 - Mozilla Firefox
 
 ### Live Demo
+Try the following link:
+https://skatcher-profile.vercel.app/
 
 ### Screen Capture
 
-Desktop View:
-<img width="1366" height="4149" alt="screencapture-localhost-5173-2025-07-23-17_56_10" src="https://github.com/user-attachments/assets/e2c98cf3-667c-4a00-920c-620f70c713ce" />
+##### Desktop View:
+<img width="1000" height="4150" alt="screencapture-skatcher-profile" src="https://github.com/user-attachments/assets/5acc457e-2f86-4477-93ab-8133e6ea6b29" />
 
-Mobile View:
+##### Mobile View:
+<img width="308" height="594" alt="image" src="https://github.com/user-attachments/assets/aa8f1755-77e4-4288-acd4-dda7d8e2f740" />
