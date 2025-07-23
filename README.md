@@ -1,4 +1,4 @@
-## SAP Landing Page 'Skatcher'
+## SPA Landing Page 'Skatcher'
 
 Simple responsive design property marketing website page
 
