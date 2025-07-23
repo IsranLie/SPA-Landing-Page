@@ -7,7 +7,7 @@ export default function StatsSection() {
       <div className="flex gap-10 items-center justify-between md:justify-start">
         <div className="text-custom-black">
           <span className="text-3xl font-semibold flex items-center gap-2">
-            <PiMapPinAreaFill className="h-8 w-8 text-custom-brown" />
+            <PiMapPinAreaFill className="h-9 w-9 text-custom-brown" />
             4.500
           </span>
           <p className="text-sm mt-1 text-custom-black">Our Square Feets</p>

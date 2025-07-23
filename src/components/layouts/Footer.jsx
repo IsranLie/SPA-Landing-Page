@@ -165,6 +165,7 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Copyright (Mobile View) */}
         <div className="mt-8 py-4 flex flex-col md:flex-row justify-between items-center text-sm text-white md:hidden">
           <div className="order-last md:order-none mt-4 md:mt-0 text-center">
             © 2022 Skatcher. All Rights Reserved

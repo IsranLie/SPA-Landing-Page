@@ -1,6 +1,6 @@
 export default function NewsletterSection() {
   return (
-    <div className="bg-gray-100 py-16 px-6 md:px-14 lg:px-28">
+    <div className="bg-custom-gray py-16 px-6 md:px-14 lg:px-28">
       <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
         <div className="w-full md:w-1/2 md:text-left">
           <h2 className="text-3xl sm:text-4xl font-bold text-custom-black leading-snug">

@@ -22,7 +22,6 @@ export default function Header() {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
-    // Tutup search overlay jika menu mobile dibuka
     if (isSearchOverlayOpen) {
       setIsSearchOverlayOpen(false);
     }
@@ -35,10 +34,8 @@ export default function Header() {
     }
   };
 
-  // Effect untuk mengatur body overflow tanpa mengganggu sticky positioning
   useEffect(() => {
     if (isMobileMenuOpen) {
-      // Simpan posisi scroll saat ini
       const scrollY = window.scrollY;
       setSavedScrollPosition(scrollY);
       document.body.style.position = "fixed";
@@ -47,14 +44,12 @@ export default function Header() {
       document.body.style.left = "0";
       document.body.style.right = "0";
     } else if (savedScrollPosition !== null) {
-      // Restore posisi scroll hanya jika menu sebelumnya terbuka
       document.body.style.position = "";
       document.body.style.top = "";
       document.body.style.width = "";
       document.body.style.left = "";
       document.body.style.right = "";
 
-      // Gunakan timeout kecil untuk memastikan DOM sudah terupdate
       setTimeout(() => {
         window.scrollTo(0, savedScrollPosition);
       }, 0);
@@ -129,7 +124,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Header Navigasi Utama - Tetap Sticky */}
+      {/* Header Navigasi Utama */}
       <div className="sticky top-0 z-50 px-6 sm:px-10 md:px-14 lg:px-28 flex justify-between items-center py-4 text-white bg-neutral-700">
         <a
           href="#home"
@@ -139,7 +134,7 @@ export default function Header() {
           Skatcher
         </a>
 
-        {/* Navigasi Desktop - Sembunyikan di Mobile */}
+        {/* Navigasi Desktop */}
         <nav className="hidden md:flex space-x-10 items-center">
           <a
             href="#about"
@@ -169,7 +164,7 @@ export default function Header() {
           </div>
         </nav>
 
-        {/* Search & Hamburger Button (Mobile) */}
+        {/* Search & Hamburger Button (Mobile View) */}
         <div className="md:hidden flex items-center space-x-2">
           <button
             className="text-white focus:outline-none bg-custom-brown rounded-sm p-2"
@@ -191,7 +186,6 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Navigation Overlay */}
       {isMobileMenuOpen && (
         <div
           className="fixed inset-0 z-30 bg-black bg-opacity-50 md:hidden"
@@ -261,7 +255,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Search Form */}
+      {/* Search Form (Mobile View) */}
       {isSearchOverlayOpen && (
         <div
           className="

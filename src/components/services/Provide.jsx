@@ -10,7 +10,6 @@ export default function Provide() {
   return (
     <div className="bg-white py-16 px-6 md:px-14 lg:px-28">
       <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
-        {/* Text */}
         <div className="md:w-1/2">
           <h3 className="font-semibold mb-2 text-custom-brown tracking-wide">
             Provide
@@ -19,11 +18,11 @@ export default function Provide() {
             We Provide Many Features and Property Benefits
           </h2>
 
-          {/* Gambar khusus mobile */}
+          {/*Image (Mobile View)*/}
           <div className="mb-6 md:hidden">
             <img
               src="/img/square-2.jpg"
-              alt="Provide Mobile"
+              alt="square-2"
               className="w-full rounded-md shadow"
             />
           </div>
@@ -44,11 +43,10 @@ export default function Provide() {
           </div>
         </div>
 
-        {/* Gambar khusus desktop */}
         <div className="md:w-1/2 hidden md:flex justify-center">
           <img
             src="/img/square-2.jpg"
-            alt="Provide Desktop"
+            alt="square-2"
             className="w-[500px] h-[300px] rounded-md shadow"
           />
         </div>

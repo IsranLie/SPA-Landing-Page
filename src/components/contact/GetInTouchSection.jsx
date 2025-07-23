@@ -5,9 +5,7 @@ export default function GetInTouchSection() {
     <div className="bg-white py-16 px-6 md:px-14 lg:px-28">
       <div className="flex flex-col md:flex-row items-center justify-between gap-12">
         <div className="w-full md:w-1/2 flex flex-col">
-          {" "}
           <div className="order-first">
-            {" "}
             <h3 className="font-semibold mb-2 text-custom-brown tracking-wide">
               Get In Touch
             </h3>
@@ -15,16 +13,16 @@ export default function GetInTouchSection() {
               Let Us Know by Sent Your Message For More Information
             </h2>
           </div>
-          {/* Image for Mobile View (hidden on desktop) */}
+
+          {/*Image (Mobile View)*/}
           <div className="w-full flex justify-center mb-6 md:hidden order-2">
             <img
               src="/img/portrait-2.jpg"
-              alt="Contact"
+              alt="portrait-2"
               className="w-full h-auto rounded-md shadow object-cover aspect-square"
             />
           </div>
           <div className="order-3">
-            {" "}
             <p className="text-gray-600 mb-6">
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
               commodo ligula eget dolor. Aenean massa. Cum sociis natoque
@@ -32,7 +30,6 @@ export default function GetInTouchSection() {
             </p>
           </div>
           <div className="w-full order-4">
-            {" "}
             <form>
               <div className="mb-4">
                 <label htmlFor="email" className="block text-gray-900 mb-2">
@@ -70,12 +67,11 @@ export default function GetInTouchSection() {
           </div>
         </div>
 
-        {/* Image for Desktop View (hidden on mobile) */}
         <div className="md:w-1/2 flex justify-end hidden md:flex">
           {" "}
           <img
             src="/img/portrait-2.jpg"
-            alt="Contact"
+            alt="portrait-2"
             className="w-[400px] h-auto rounded-md shadow"
           />
         </div>

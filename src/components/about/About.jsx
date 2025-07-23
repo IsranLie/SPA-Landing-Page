@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function About() {
   return (
     <section
@@ -7,16 +5,14 @@ export default function About() {
       className="scroll-mt-20 bg-white py-16 px-6 md:px-14 lg:px-28"
     >
       <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-        {/* Gambar khusus desktop */}
         <div className="md:w-1/2 hidden md:flex justify-center">
           <img
             src="/img/square-1.jpg"
-            alt="About"
+            alt="square-1"
             className="w-[500px] h-[300px] rounded-md shadow"
           />
         </div>
 
-        {/* Teks + gambar untuk mobile */}
         <div className="md:w-1/2">
           <h3 className="font-semibold mb-2 text-custom-brown tracking-wide">
             About Us
@@ -25,11 +21,11 @@ export default function About() {
             Discover an Extraordinary Property With Us
           </h2>
 
-          {/* Gambar khusus mobile, tampil setelah heading utama */}
+          {/*Image (Mobile View)*/}
           <div className="mb-6 md:hidden">
             <img
               src="/img/square-1.jpg"
-              alt="About Mobile"
+              alt="square-1"
               className="w-full rounded-md shadow"
             />
           </div>

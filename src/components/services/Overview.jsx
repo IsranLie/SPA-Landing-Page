@@ -37,8 +37,7 @@ export default function Overview() {
 
       <div className="w-full h-[400px] py-6">
         <iframe
-          // src="https://www.youtube.com/embed/PpeE86P9TnA?si=nxGO9usSrzz4kXYv"
-          src="https://www.youtube.com/embed/PpeE86P9TnA"
+          src="https://www.youtube.com/embed/PpeE86P9TnA?si=nxGO9usSrzz4kXYv"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
@@ -46,7 +45,6 @@ export default function Overview() {
         ></iframe>
       </div>
 
-      {/* Text */}
       <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-5 py-4">
         {overviews.map((overview, index) => (
           <div key={index} className="md:w-1/2">

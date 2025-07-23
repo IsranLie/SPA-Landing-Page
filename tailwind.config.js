@@ -9,6 +9,8 @@ export default {
       colors: {
         "custom-brown": "#A85C01",
         "custom-black": "#252525",
+        "custom-gray": "#FAFAFA",
+        "dark-80": "rgba(37, 37, 37, 0.8)",
       },
     },
   },

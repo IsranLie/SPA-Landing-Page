@@ -67,4 +67,8 @@ This project designed with the latest web browsers in mind. Recommended that you
 ### Live Demo
 
 ### Screen Capture
+
+Desktop View:
 <img width="1366" height="4149" alt="screencapture-localhost-5173-2025-07-23-17_56_10" src="https://github.com/user-attachments/assets/e2c98cf3-667c-4a00-920c-620f70c713ce" />
+
+Mobile View:
