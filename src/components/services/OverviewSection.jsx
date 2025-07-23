@@ -13,7 +13,7 @@ const overviews = [
   },
 ];
 
-export default function Overview() {
+export default function OverviewSection() {
   return (
     <div className="bg-custom-black py-16 px-6 md:px-14 lg:px-28">
       {/* Text */}

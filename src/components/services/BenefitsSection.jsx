@@ -56,9 +56,12 @@ const cards = [
   },
 ];
 
-export default function Benefits() {
+export default function BenefitsSection() {
   return (
-    <section id="benefits" className="bg-white py-16 px-6 md:px-14 lg:px-28">
+    <section
+      id="benefits"
+      className="scroll-mt-20 bg-white py-16 px-6 md:px-14 lg:px-28"
+    >
       <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-5">
         <div className="md:w-1/2 flex">
           <div className="grid grid-cols-2 gap-4">

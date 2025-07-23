@@ -6,7 +6,7 @@ const features = [
   "Lorem ipsum dolor sit amet, consectetuer",
 ];
 
-export default function Provide() {
+export default function ProvideSection() {
   return (
     <div className="bg-white py-16 px-6 md:px-14 lg:px-28">
       <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12">

@@ -1,13 +1,13 @@
-import Provide from "./Provide";
-import Overview from "./Overview";
-import Benefits from "./Benefits";
+import ProvideSection from "./ProvideSection";
+import OverviewSection from "./OverviewSection";
+import BenefitsSection from "./BenefitsSection";
 
 export default function Services() {
   return (
     <section id="services" className="scroll-mt-20">
-      <Provide />
-      <Overview />
-      <Benefits />
+      <ProvideSection />
+      <OverviewSection />
+      <BenefitsSection />
     </section>
   );
 }

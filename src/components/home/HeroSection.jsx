@@ -29,7 +29,7 @@ export default function HeroSection() {
             <button className="bg-custom-brown text-md rounded-md py-4 w-full sm:w-[180px] font-semibold hover:bg-amber-700 transition">
               Overview
             </button>
-            <button className="border border-gray-200 text-md rounded-md py-4 w-full sm:w-[180px] font-semibold hover:bg-neutral-500 transition">
+            <button className="border border-gray-200 hover:border-custom-brown text-md rounded-md py-4 w-full sm:w-[180px] font-semibold hover:bg-custom-brown transition">
               Learn More
             </button>
           </div>

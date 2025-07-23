@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* === Styling Pagination Swiper === */
 .swiper-pagination-bullet {
   background-color: #d1d5db !important;
